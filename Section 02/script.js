@@ -181,7 +181,7 @@ switch (true) {
 
 */
 
-
+/*
 var teamMike = (89 + 120 + 103)/3;
 var teamJohn = (116 + 94 + 123)/3;
 var teamMary = (97 + 134 + 105)/3;
@@ -221,4 +221,180 @@ switch (true) {
     default:
         console.log("It's tie !");
         break;
+}
+*/
+/*
+// Functions
+
+function calculateAge (birthYear){
+    return 2020-birthYear;
+}
+var ageMike = calculateAge(1948);
+var ageJane = calculateAge(1969);
+var ageJohn = calculateAge(1990);
+console.log(ageJohn, ageMike, ageJane);
+
+function yearsUntilRetirement(year, firstName) {
+    var age = calculateAge(year);
+    var retirement = 65 - age;
+    if(retirement>0){
+    console.log(firstName + ' will retire in '+retirement+' years.');
+    }else{
+        retirement *= -1;
+        console.log(firstName+ ' retired '+retirement+' years ago.');
+    }
+}
+
+yearsUntilRetirement(1970, 'Mary');
+yearsUntilRetirement(1940, 'Mark');
+
+
+// Functions statements and expressions 
+var whatDoYouDo = function(job, firstName) {
+    switch (job) {
+        case 'teacher':
+            return firstName + ' teaches kid how to code.';
+        case 'driver':
+            return firstName + ' drives a cab in Lisbon.';
+        case 'designer':
+              return firstName + ' designs beautiful websites.';       
+        default:
+            return firstName + ' does something else.';
+    }
+}
+
+console.log(whatDoYouDo('teacher', 'John'));
+console.log(whatDoYouDo('driver', 'Mike'));
+console.log(whatDoYouDo('designer', 'Mark'));
+console.log(whatDoYouDo('Lawyer', 'Mary'));
+*/
+/*
+// Arrays 
+
+var names = ['John','Mike','Jane'];
+var year = new Array(1990, 1958, 1969);
+
+console.log(names[2]);
+console.log(names.length);
+
+
+names[1]= 'Ben';
+names[names.length] = 'Mary';
+console.log(names);
+
+var john = ['John', 'Smith', 1990, 'teacher',false];
+
+john.push('designer');
+john.push('blue');
+
+john.unshift('Mr.');
+console.log(john);
+
+john.pop();
+john.shift();
+console.log(john);
+
+var isDesigner = john.indexOf('designer') ===-1 ? 'John is Not a Designer !' : 'John is a Designer !';
+console.log(isDesigner);
+
+
+
+// Challenge 03 
+
+var calculateTip = function (amountBil){
+    var tip;
+
+    if (amountBil<50) {
+        tip = amountBil * 0.2;
+
+    } else if (amountBil>=50 && amountBil<=200){
+        tip = amountBil*0.15;
+
+    }else{
+        tip = amountBil*0.1;
+    }
+    return tip;
+}
+
+var tipArray = [calculateTip(124), calculateTip(48), calculateTip(268)];
+var finalArray = [tipArray[0]+124, tipArray[1]+48, tipArray[2]+268];
+
+console.log(tipArray);
+console.log(finalArray);
+
+
+
+var john = {
+    firstName : 'John',
+    lastName : 'Smith',
+    birthYear : 1990,
+    family : ['Jane', 'Mark', 'Bob', 'Kate'],
+    job : 'teacher',
+    isMarried : false
+};
+
+console.log(john);
+
+john.isMarried = true;
+john.job = 'designer';
+
+console.log(john);
+
+
+var jane = new Object();
+jane.firstName = 'Jane';
+jane.birthYear = '1969';
+jane.job = 'teacher';
+
+console.log(jane);
+
+
+
+// object methodes 
+var john = {
+    firstName : 'John',
+    lastName : 'Smith',
+    birthYear : 1994,
+    family : ['Jane', 'Mark', 'Bob', 'Kate'],
+    job : 'teacher',
+    isMarried : false,
+    calcAge: function(){
+       this.age = 2020- this.birthYear; 
+    }
+};
+john.calcAge();
+console.log(john);
+*/
+
+// coding challenge 4
+
+var john = {
+        fullName : 'John Smith',
+        mass : 90,
+        height : 1.90,
+        calcBMI : function(){
+                this.BMI = this.mass / (this.height * this.height);
+                return this.BMI;
+        }
+}
+
+var mark = {
+    fullName : 'Mark Smith',
+    mass : 90,
+    height : 1.80,
+    calcBMI : function(){
+        this.BMI = this.mass / (this.height * this.height);
+        return this.BMI;
+    }
+}
+
+
+
+
+if (john.calcBMI() > mark.calcBMI()) {
+    console.log (john.fullName + ` has a heigher BMI, with `+john.BMI+` points, ` + mark.fullName +` 's BMI is `+mark.BMI+` points`);
+} else if(mark.BMI>john.BMI){
+    console.log (mark.fullName + ` has a heigher BMI, with `+mark.BMI+` points, ` + john.fullName +` 's BMI is `+john.BMI+` points`);
+}else{
+    console.log('They have the same BMI');
 }
