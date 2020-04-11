@@ -364,7 +364,7 @@ var john = {
 };
 john.calcAge();
 console.log(john);
-*/
+
 
 // coding challenge 4
 
@@ -397,4 +397,123 @@ if (john.calcBMI() > mark.calcBMI()) {
     console.log (mark.fullName + ` has a heigher BMI, with `+mark.BMI+` points, ` + john.fullName +` 's BMI is `+john.BMI+` points`);
 }else{
     console.log('They have the same BMI');
+}
+
+
+// Loops and iterations
+
+for (var i =0 ; i < 10; i++) {
+    console.log(i+1);
+}
+
+var john = ['John', 'Smith', 1990, 'teacher',false];
+
+for (var i=0 ; i < john.length ; i++){
+    console.log(john[i]);
+}
+var i =0; 
+while ( i< john.length ){
+    console.log(john[i]);
+    i++;
+}
+*/
+
+/*
+var john = ['John', 'Smith', 1990, 'teacher',false];
+
+for (var i = 0; i< john.length; i++){
+    if(typeof john[i] !== 'string') continue;
+    console.log(john[i]);
+}
+
+
+for (var i = 0; i< john.length; i++){
+    if(typeof john[i] !== 'string') break;
+    console.log(john[i]);
+}
+
+
+for (var i=john.length-1 ; i >= 0 ; i--){
+    console.log(john[i]);
+}
+
+*/
+
+
+// Challenge 05
+
+
+var john = {
+    amountBill : [124, 48, 268, 180, 42],
+    amoutTip : [],
+    amountFinal : [],
+    calcTip : function(){
+        for (var i = 0; i<this.amountBill.length;i++){
+                if(this.amountBill[i]<50){
+                    this.amoutTip[this.amoutTip.length] = this.amountBill[i]*0.2;
+                }else if (this.amountBill[i]>=200){
+                    this.amoutTip[this.amoutTip.length] = this.amountBill[i]*0.1;
+                }else{
+                    this.amoutTip[this.amoutTip.length] = this.amountBill[i]*0.15;
+                }
+        } 
+    
+    },
+    calcFinal : function(){
+        for (i = 0; i<this.amountBill.length; i++){
+            this.amountFinal[i] = this.amountBill[i] + this.amoutTip[i];
+        }
+    }
+}
+john.calcTip();
+john.calcFinal();
+console.log (john);
+
+
+var mark = {
+    amountBill : [77, 375, 110, 45],
+    amoutTip : [],
+    amountFinal : [],
+    calcTip : function(){
+        for (var i = 0; i<this.amountBill.length;i++){
+            if(this.amountBill[i]<100){
+                this.amoutTip[this.amoutTip.length] = this.amountBill[i]*0.2;
+            }else if (this.amountBill[i]>=300){
+                this.amoutTip[this.amoutTip.length] = this.amountBill[i]*0.25;
+            }else{
+                this.amoutTip[this.amoutTip.length] = this.amountBill[i]*0.1;
+            }
+    } 
+    },
+    calcFinal : function(){
+        for (i = 0; i<this.amountBill.length; i++){
+            this.amountFinal[i] = this.amountBill[i] + this.amoutTip[i];
+        }
+    }
+}
+
+mark.calcTip();
+mark.calcFinal();
+console.log (mark);
+
+var averageTip = function(arr){
+    var sum = 0;
+    for (var i = 0; i< arr.length; i++){
+        sum += arr[i];
+    }
+    return sum/arr.length;
+}
+
+var averageJohn = averageTip(john.amoutTip);
+var averageMark = averageTip(mark.amoutTip);
+
+console.log(`The average of John's tips is ${averageJohn}, and Mark's Average is ${averageMark}`);
+
+if (averageJohn === averageMark) {
+    console.log('They have the same average of tips');
+}else if(averageMark>averageJohn){
+    console.log('Mark tips more than John.');
+
+}else{
+    console.log ('John tips more than Mark.');
 }
