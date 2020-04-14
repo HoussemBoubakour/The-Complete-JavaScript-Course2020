@@ -1,0 +1,97 @@
+
+
+body{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('back.png');
+
+}
+button{
+    border: none;
+    border-radius: 10px;
+    color: #12131C;
+    background-color: #EF233C;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 3%;
+
+}
+
+
+.container{
+    width: 60%;
+    height: 80%;
+    background: linear-gradient(90deg, #D7D9E0 50%, #EDF2F4 50%);
+    display: grid;
+    justify-content: center;
+    margin: 10vh auto;
+    font-size: 25px;
+    
+        
+}
+
+.line{
+   display: flex;
+   flex-direction: row; 
+   justify-content: center;
+   align-items: center;
+}
+
+.center{
+    text-align: center;
+    font-size: 30px;
+    margin: 20px;
+    line-height: 2;
+    
+}
+.box{
+    background-color: #8D99AE;
+    border-radius: 20px;
+}
+
+/* id */
+#new-game{
+ margin: 0px;
+}
+#img-dice{
+    height: 100px;
+    width: 100px;
+    margin: 0 150px;
+    background-color: #8D99AE;
+    border-radius: 20px;
+}
+#roll-dice-btn{
+
+}
+#hold-btn{
+    margin: 30px 150px;
+}
+
+@media  (orientation :portrait){
+    button{
+        height: 80px;
+        width: 200px;
+    }
+    #img-dice{
+        height: 150px;
+        width: 150px;
+        margin: 25px;
+    }
+    body{
+        padding: 20px;
+    }
+    .center{
+        font-size: 40px;
+    }
+    .container{
+        width: 75%;
+    }
+    #hold-btn{
+        margin: 30px;
+    }
+}
+
+@media  (orientation :landscape){
+    .container{
+        width: 80%;
+        height: 100%;
+    }
+}
