@@ -1,64 +1,48 @@
-
-
 body{
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('back.png');
-
 }
 button{
     border: none;
     border-radius: 10px;
-    color: #12131C;
-    background-color: #EF233C;
+    color: #D7D9E0;
+    background-color: #053189;
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
     margin-top: 3%;
 
 }
-.panel-player1{
-    font-size: 50px;
-    opacity: 0.3;
-}
-.panel-player2{
-    font-size: 50px;
-    opacity: 0.3;
-}
-.active{
-    border: 2px solid black;
-    border-radius: 10px;
-    opacity: 1;
-}
-
-
+/* CLASS */
 .container{
     width: 60%;
     height: 80%;
-    background: linear-gradient( #F0F4ED,#969499);
+    background: linear-gradient( #969499,#F0F4ED);
     display: grid;
     justify-content: center;
     margin: 10vh auto;
-    font-size: 25px;
-    
-        
+    font-size: 25px;  
+    border-radius: 10px;   
 }
-
 .line{
    display: flex;
    flex-direction: row; 
    justify-content: center;
    align-items: center;
 }
-
 .center{
     text-align: center;
-    margin: auto;
-    
 }
-.box{
-    background-color: #8D99AE;
-    border-radius: 20px;
+.panel-player1,
+.panel-player2{
+    font-size: 50px;
+    opacity: 0.3; 
+    line-height: 0.75;
+    padding: 20px;
 }
-
-
+.active{
+    border: 2px solid black;
+    border-radius: 10px;
+    opacity: 1;
+}
 .img-dice{
     height: 150px;
     width: 150px;
@@ -68,23 +52,21 @@ button{
     position: static;
 }
 .CURRENT{
-   
     border: black solid 5px;
     border-radius: 10px;
 }
-
 .winner{
-    background:linear-gradient(#D90429,rgb(233, 168, 179)  );
+    background:linear-gradient(#053189,rgb(205, 193, 240)  );
     font-weight: 300;
-    font-size: 60px;
-    border-radius: 20px;
+    padding: 20px;
+    color: #D7D9E0;
+    border-radius: 10px;
     border: black solid 5px;
     opacity: 1;
-
 }
 
 
-/* id */
+/* ID */
 #new-game{
     margin: 0px;
    }
@@ -92,38 +74,39 @@ button{
     margin: 30px 100px;
 }
 
+#player-total1,
+#player-total2{
+    color: #5174BA ;
+    font-size: 75px;
+}
 
-
-
+/*Media queries*/
 
 @media  (orientation :portrait){
     button{
         height: 100px;
-        width: 250px;
+        width: 300px;
+        font-size: 45px;
     }
     #img-dice{
         height: 300px;
         width: 300px;
-        
     }
-    body{
-        padding: 10px;
-    }
+  
     .center{
         font-size: 45px;
     }
     .container{
-        width: 90%;
-        height: 75%;
+        width: 90vw;
+        height: 90vh;
     }
+    .winner{
+        width: 200px;
+    }
+
     #hold-btn{
         margin: 30px;
     }
+    
 }
 
-@media  (orientation :landscape){
-    .container{
-        width: 80%;
-        height: 80%;
-    }
-}
