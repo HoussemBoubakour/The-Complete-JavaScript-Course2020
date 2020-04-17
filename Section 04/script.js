@@ -7,7 +7,7 @@ init();
 
 
 document.querySelector('#roll-dice-btn').addEventListener('click', function(){
-   if (gamePlaying){
+   if (gamePlaying && max_score !== undefined){
 
             
             var dice_1 = Math.floor(Math.random()*6) + 1;
@@ -46,7 +46,7 @@ document.querySelector('#roll-dice-btn').addEventListener('click', function(){
 });
 
 document.getElementById('hold-btn').addEventListener('click', function(){
-    if (gamePlaying){
+    if (gamePlaying && max_score !== undefined){
     scores[activePlayer-1] += roundScore;
     document.querySelector('#player-total' + activePlayer).textContent = scores[activePlayer-1];
 
