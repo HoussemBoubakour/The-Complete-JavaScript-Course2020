@@ -9,22 +9,60 @@
 </head>
 
 <body>
+<div class="container1">
+
+    <div class="content-cnt1">
+
+        <button id="close">X</button>
+
+         <h1 class="center" style="font-family: 'Roboto', sans-serif; ">Game Rules</h1>
+
+        <ul>
+            
+        <li>  The game has 2 players, playing in rounds.</li>
+        <li>  In each turn, a player rolls the dice as many times as he whishes, each result get added to his ROUND (CURRENT) score.</li>
+        <li>  BUT, if the player rolls a '1' with one of the dice, all his ROUND score gets lost, after that it's the next player's turn.</li>
+        <li>  The player looses his ENTIRE score when he rolls two double '6' in a row. And it's the next player's turn.</li>
+        <li>  He can choose to 'Hold', which means that his ROUND score gets added to his GLOBAL score. After that, it's the next player's turn.</li>
+        <li>  <em id="imp">You must enter the winning score at the beginning of the game </em>and the first player to reach that number on GLOBAL score wins the game.</li>
+        
+        </ul>
+
+    </div>
+</div>
+
+
+
+
+
 <div class="container">
+    <button id="help">?</button>
     <div class="line">
         <div id="new-game">
             <button> <i class="fas fa-plus"></i>
                   NEW GAME</button>
         </div>
+        
     </div>
-
+    
+<div class="center" id="yourScore">
+    
+    
+    <input type="number" class="set_score center" id="winningScore">
+    <button id="ok">OK</button>
+    
+</div>
     <div class="line">
         <div class="center panel-player1 active">
             <div  id="name-1">PLAYER 1</div>
             <br> <div id="player-total1">15</div>
             </div>
-
-        <div><img src="dice-1.png" alt="" class="img-dice"></div>
         
+        <div>
+            <div><img src="dice-1.png" alt="" class="img-dice" id="dice1"></div>
+            <div><img src="dice-1.png" alt="" class="img-dice" id="dice2"></div>
+        </div>
+
         <div class="center panel-player2">
         <div  id="name-2">PLAYER 2</div>
         <br> <div id="player-total2">0</div>
@@ -45,14 +83,16 @@
                 <div class="line">
                     <div id="hold-btn"><button><i class="fab fa-dropbox"></i>  HOLD</button></div>
                 </div>
+                
             </div>
         <div class="center CURRENT2">CURRENT
             <br> <div id="current-2"> 0 </div>
         </div>
 
     </div>
-
+   
 </div>
+
 </body>
 
 
