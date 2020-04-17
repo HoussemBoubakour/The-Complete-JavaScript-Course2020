@@ -14,9 +14,10 @@ button{
 input{
     border: none;
     border-radius: 10px;
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Roboto', sans-serif;
     margin-top: 3%;
+    overflow-y: auto;
 }
 li{
     font-family: 'Roboto', sans-serif; 
