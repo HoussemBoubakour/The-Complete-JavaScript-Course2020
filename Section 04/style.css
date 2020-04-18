@@ -1,5 +1,6 @@
 body{
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('back.png');
+    overflow: hidden
 }
 button{
     border: none;
@@ -9,7 +10,6 @@ button{
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
     align-content: center;
-
 }
 input{
     border: none;
@@ -17,7 +17,7 @@ input{
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     margin-top: 3%;
-    overflow-y: auto;
+    padding: 20px;
 }
 li{
     font-family: 'Roboto', sans-serif; 
@@ -52,7 +52,6 @@ li{
     padding: 10px;
     background: linear-gradient( #F0F4ED,#b4c6eb);
     border-radius: 20px;
-   
 }
 .line{
    display: flex;
@@ -89,7 +88,6 @@ li{
 .winner{
     background:linear-gradient(#053189,rgb(205, 193, 240)  );
     font-weight: 300;
-
     padding: 20px;
     color: #D7D9E0;
     border-radius: 10px;
@@ -120,9 +118,8 @@ li{
 #help{
     position: fixed;
     right: 0;
-    top: 0;
-    background-color: white;
-    color: black;
+    top: 20px;
+    z-index: 1;
 }
 
 #imp{
@@ -134,22 +131,36 @@ li{
 /*Media queries*/
 
 @media  (orientation :portrait){
+    body{
+        height: 100vh;
+        width: 100vw;
+    }
     button{
         height: 100px;
         width: 300px;
         font-size: 45px;
     }
-    #img-dice{
-        height: 300px;
-        width: 300px;
+    li{
+        font-size: 28px;
     }
-  
+    #img-dice{
+        height: 500px;
+        width: 500px;
+    }
     .center{
         font-size: 45px;
     }
     .container{
-        width: 90vw;
-        height: 90vh;
+        height: 85vh;
+        width: 85vw;
+    }
+    .container1{
+        height: 100%;
+        width: 100%;
+    }
+    .content-cnt1{
+        height: 80vw;
+        width: 80vw;
     }
     .winner{
         width: 200px;
@@ -158,6 +169,14 @@ li{
     #hold-btn{
         margin: 30px;
     }
-    
+    #ok,
+    #close{
+        height: 80px;
+        width: 80px;
+    }
+    #help{
+        height: 80px;
+        width: 200px;
+    }
 }
 
