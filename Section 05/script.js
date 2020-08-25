@@ -116,15 +116,12 @@ console.log(ages);
 console.log(fullAge);
 console.log(Rates);
 
-*/
-
-
 // functions returning functions
 
 function interviewQuestions(job){
     if(job === 'designer'){
         return function(name){
-            console.log(name +' Can you please explain to us UX ?');
+            console.log(name +', Can you please explain to us UX ?');
         }
         }else if(job === 'teacher'){
          return function(name){
@@ -146,3 +143,42 @@ designerQuestion('Jane');
 teacherQuestion('Albert');
 
 interviewQuestions('driver')('Kyle');
+
+
+
+// IIFE
+
+function game(){
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+}
+game();
+
+
+
+(function () {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+}
+)();
+
+(function (goodLuck) {
+    var score = Math.random() * 10;
+    console.log(score >= 5 - goodLuck);
+})(5);
+*/
+
+//CLOSURES
+
+function retirement(retirementAge){
+    var a = " years left until retirement.";
+    return function(yearOfBirth){
+        var age = 2020-yearOfBirth;
+        console.log((retirementAge-age) + a);
+    }
+}
+
+var retirementUS = retirement(66);
+
+retirementUS(1990);
+retirement(66)(1994);
