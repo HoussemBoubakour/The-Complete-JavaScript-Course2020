@@ -166,7 +166,7 @@ game();
     var score = Math.random() * 10;
     console.log(score >= 5 - goodLuck);
 })(5);
-*/
+
 
 //CLOSURES
 
@@ -182,3 +182,85 @@ var retirementUS = retirement(66);
 
 retirementUS(1990);
 retirement(66)(1994);
+
+function interviewQuestion(job){
+    return function(name){
+        if(job === 'designer'){
+                console.log(name +', Can you please explain to us UX ?');
+            
+            }else if(job === 'teacher'){
+
+                console.log('What subject do you teach, '+name+' ?');
+             }   
+        else {
+                console.log('What do you do '+name+' ?');
+            }
+        }
+
+    }
+    var teacherQuestion = interviewQuestion('teacher');
+    var designerQuestion = interviewQuestion('designer');
+
+        interviewQuestion('driver')('Kyle');
+
+        */
+
+        // Bind, call and Apply
+
+    var john = {
+        name:'John',
+        age: 26,
+        job:'teacher',
+        presentation (style, timeOfDay){
+            if (style === 'formal'){
+            console.log (`Good ${timeOfDay} Ladies and gentlelmen ! I'm ${this.name} I'm ${this.age} years old and I'm a ${this.job}.`);
+        }else if(style === 'friendly'){
+            console.log (`Hey ! what's up ? I'm ${this.name}, I'm ${this.age} and I'm a ${this.job}, have a nice ${timeOfDay}.`);
+            }
+        }
+    };
+
+    var emily = {
+        name:'Emily',
+        age: 35,
+        job:'designer'
+    };
+
+john.presentation('formal','afternoon');
+
+john.presentation.call(emily,'friendly','morning');
+
+//john.presentation.apply(emily,['friendly','morning']); .apply is used for arrays...
+
+var jonhFriendly = john.presentation.bind(john,'friendly');
+
+jonhFriendly('day');
+
+var emilyFormal = john.presentation.bind(emily,'formal');
+
+emilyFormal('night');
+
+
+var years = [2001, 1954, 2007, 1962, 1924];
+
+function arrayCalc(arr, fn){
+    var arrRes = [];
+    for (i = 0; i< arr.length; i++){
+        arrRes.push (fn(arr[i]));
+    }
+    return arrRes;
+}
+
+function calculateAge(el){
+    return 2020-el;
+}
+
+function isFullAge(limit, el){
+    return el >= limit;
+}
+var age = arrayCalc(years,calculateAge);
+
+var isFullAgeJapan = arrayCalc(age,isFullAge.bind(this,'20'));
+
+console.log(age);
+console.log(isFullAgeJapan);
