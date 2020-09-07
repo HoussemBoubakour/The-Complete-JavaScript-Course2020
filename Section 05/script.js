@@ -203,7 +203,7 @@ function interviewQuestion(job){
 
         interviewQuestion('driver')('Kyle');
 
-        */
+        
 
         // Bind, call and Apply
 
@@ -264,3 +264,120 @@ var isFullAgeJapan = arrayCalc(age,isFullAge.bind(this,'20'));
 
 console.log(age);
 console.log(isFullAgeJapan);
+
+
+
+
+// Coding Challenge 07
+
+(function(){
+    function Questions(question, answers, correct) {
+        this.question = question;
+        this.answers = answers;
+        this.correct = correct;
+    }
+    Questions.prototype.displayQuestion = function() {
+        console.log(this.question);
+        for (var i = 0; i < this.answers.length; i++) {
+            console.log(i + ': ' + this.answers[i]);
+        }
+    }
+    
+    Questions.prototype.checkAnswer = function(ans) {
+            if (ans === this.correct){
+                console.log(`The answer is correct !`);
+            }else{
+                console.log(`The answer is wrong ! Try again !1`);
+            }
+    }
+    
+    
+    
+    var q1,q2,q3;
+    
+    q1 = new Questions(`What's the result of 3*3 ?`,
+                        ['1','6','9','15'],
+                        2);
+    q2 = new Questions(`What progamming language are you using right now ?`,
+                        ['Javascript','Python','php'],
+                        0);
+    q3 = new Questions(`What's the US capital ?`,
+                        ['DC','Paris','Roma'],
+                        0);
+    
+    var allQuestions = [q1, q2, q3];
+    
+    var n = Math.floor(Math.random() * allQuestions.length);
+       
+    allQuestions[n].displayQuestion();
+    
+    var answer = parseInt(prompt ('Please select the correct answer !'));
+    
+    allQuestions[n].checkAnswer(answer);
+})();
+*/
+
+// Expert Level
+
+(function(){
+
+    var q1,q2,q3;
+    
+    function Questions(question, answers, correct) {
+        this.question = question;
+        this.answers = answers;
+        this.correct = correct;
+    }
+    Questions.prototype.displayQuestion = function() {
+        console.log(this.question);
+        for (var i = 0; i < this.answers.length; i++) {
+            console.log(i + ': ' + this.answers[i]);
+        }
+    }
+    
+    Questions.prototype.checkAnswer = function(ans) {
+            if (ans === this.correct){
+                console.log(`The answer is correct !`);
+            }
+            else{
+                console.log(`The answer is wrong ! Try again !`);
+            }
+    }
+    
+    
+    
+    
+    
+    q1 = new Questions(`What's the result of 3*3 ?`,
+                        ['1','6','9','15'],
+                        2);
+    q2 = new Questions(`What progamming language are you using right now ?`,
+                        ['Javascript','Python','php'],
+                        0);
+    q3 = new Questions(`What's the US capital ?`,
+                        ['DC','Paris','Roma'],
+                        0);
+    
+    var allQuestions = [q1, q2, q3];
+    
+  function showQuestion() {
+     var n = Math.floor(Math.random() * allQuestions.length);
+       
+    allQuestions[n].displayQuestion();
+    
+    var answer = prompt ('Please select the correct answer !');
+
+        if (answer !== 'exit') {
+        allQuestions[n].checkAnswer(parseInt(answer));
+        showQuestion();     
+        }
+
+     
+    };
+    
+    showQuestion();  
+
+})();
+
+
+//  Task number 10
