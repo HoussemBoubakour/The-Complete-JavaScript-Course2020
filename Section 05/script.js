@@ -320,9 +320,8 @@ console.log(isFullAgeJapan);
 // Expert Level
 
 (function(){
-
+    var score = 0;
     var q1,q2,q3;
-    
     function Questions(question, answers, correct) {
         this.question = question;
         this.answers = answers;
@@ -337,10 +336,15 @@ console.log(isFullAgeJapan);
     
     Questions.prototype.checkAnswer = function(ans) {
             if (ans === this.correct){
+                score++;
                 console.log(`The answer is correct !`);
+                console.log(`Your score is ${score}`);
+                console.log(`----------------------`);
             }
             else{
                 console.log(`The answer is wrong ! Try again !`);
+                console.log(`Your score is ${score}`);
+                console.log(`----------------------`);
             }
     }
     
@@ -375,9 +379,6 @@ console.log(isFullAgeJapan);
      
     };
     
-    showQuestion();  
+      showQuestion();  
 
 })();
-
-
-//  Task number 10
