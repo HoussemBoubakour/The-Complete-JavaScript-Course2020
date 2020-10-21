@@ -88,7 +88,7 @@ ages6 = years.map((el, index) => {
 
 });
 console.log(age6);
-*/
+
 
 // Arrow functions 2
 
@@ -108,6 +108,7 @@ var box5 = {
 
 //box5.clickMe();
 
+
 var box6 = {
     color: 'green',
     position: 1,
@@ -121,3 +122,75 @@ var box6 = {
 }
 
 box6.clickMe();
+
+
+function Person(name){
+    this.name = name;
+}
+//ES5
+
+Person.prototype.myFriends5 = function(friends){
+
+    var arr = friends.map (function(el){
+        return this.name + ' is friend with ' + el;
+    }.bind(this));
+    console.log(arr);
+}
+
+
+
+
+//ES6
+Person.prototype.myFriends6 = function(friends){
+
+    var arr = friends.map ((el) => this.name +
+     ' is friend with ' + el);
+    console.log(arr);
+}
+
+
+var friends = ['Bob', 'Jane', 'Mark'];
+
+new Person('John').myFriends6(friends);
+
+
+
+
+// Destructuring 
+
+const [name, age] = ['John', 26];
+console.log(name);
+console.log(age);
+
+const obj = {
+    firstName: 'John',
+    lastName: 'Smith'
+};
+
+const {firstName, lastName} = obj;
+console.log(firstName);
+console.log(lastName);
+
+function calculateAgeRetirement (year){
+    const age = new Date().getFullYear() - year;
+    return [age, 65- age];
+}
+
+const[age2 , retirement] = calculateAgeRetirement(1990);
+
+console.log(age2);
+console.log(retirement);
+
+*/
+
+
+// Arrays In ES6
+
+
+
+
+
+
+
+
+
