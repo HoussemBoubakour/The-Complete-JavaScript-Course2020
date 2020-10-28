@@ -230,7 +230,7 @@ var UIController = (function(){
 
             var type;
 
-            obj.budget > 0 ? type = 'exp': type = 'inc';
+            obj.budget > 0 ? type = 'inc': type = 'exp';
 
             document.querySelector(DOMStrings.budgetLabel).textContent = formatNumber (obj.budget, type) + '$';
             
