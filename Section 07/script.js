@@ -245,7 +245,7 @@ console.log(ages.findIndex(cur => cur >= 18));
 
 console.log(ages.find (cur => cur >= 18));
 
-*/
+
 
 // Spread operator
 
@@ -270,3 +270,47 @@ console.log(sum2);
 
 var sum3 = addFourAges(...ages);
 console.log(sum3);
+
+const familySmith = ['John', 'Jane', 'Mark'];
+const familyMiller = ['Mary', 'Bob', 'Ann'];
+
+const bigFamily = [...familyMiller, 'Lily', ...familySmith];
+console.log (bigFamily);
+
+
+const h = document.querySelector('h1');
+const boxes = document.querySelectorAll ('.box');
+
+const all = [h, ...boxes];
+
+Array.from(all).forEach(cur => cur.style.color = 'purple');
+*/
+
+// Rest parametres
+
+function isFullAge5(){
+    var argsArr = Array.prototype.slice.call(arguments);
+
+    argsArr.forEach(function(cur){
+        console.log((2020- cur)>= 18)
+    })
+};
+
+//isFullAge5(1990, 2005, 1999);
+
+function isFullAge6(limit, ...years){
+    years.forEach(cur => console.log(2020-cur >=limit));
+}
+
+isFullAge6(15, 1990, 2005, 1999,2015);
+
+
+
+
+
+
+
+
+
+
+
